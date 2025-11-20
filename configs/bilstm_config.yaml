@@ -1,0 +1,48 @@
+# Bi-LSTM Model Configuration
+
+model:
+  architecture: bilstm
+  embedding_dim: 100  # Using GloVe 100d
+  lstm_units: [256, 128]
+  dense_units: 512
+  dropout_rates: [0.2, 0.3, 0.4]
+  bidirectional: true
+  use_pretrained_embeddings: false
+  trainable_embeddings: true
+
+data:
+  text_file: Shakespeare.txt
+  vocab_size: 10000
+  sequence_length: 20
+  batch_size: 64
+  train_split: 0.8
+
+training:
+  epochs: 10
+  initial_lr: 0.001
+  optimizer: adam
+  loss: sparse_categorical_crossentropy
+  clipnorm: 1.0
+  label_smoothing: 0.1
+
+callbacks:
+  early_stopping:
+    patience: 5
+    monitor: val_loss
+  lr_scheduler:
+    factor: 0.5
+    patience: 2
+    min_lr: 1.0e-6
+  model_checkpoint:
+    save_best_only: true
+    monitor: val_accuracy
+
+inference:
+  temperature: 0.8
+  top_k: 40
+  num_words: 100
+
+paths:
+  model_save_path: models/best_bilstm_model.h5
+  log_dir: logs
+  embeddings_dir: data

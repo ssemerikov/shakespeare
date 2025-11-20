@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.log
+models/*.h5
+models/*.pkl
+logs/
+data/glove*
+*.txt.utf-8
+training_output.log
+.DS_Store

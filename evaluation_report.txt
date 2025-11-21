@@ -1,0 +1,325 @@
+2025-11-21 20:25:25.853103: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-11-21 20:25:33.186451: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+WARNING:absl:Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+======================================================================
+SHAKESPEARE BI-LSTM: COMPREHENSIVE MODEL EVALUATION
+======================================================================
+
+📦 Loading model and character mappings...
+✓ Model loaded successfully
+⚠ Character mappings not found, creating from Shakespeare.txt...
+✓ Character mappings created (vocab size: 100)
+
+📖 Loading Shakespeare text for testing...
+✓ Test set size: 803,903 characters
+
+======================================================================
+1. QUANTITATIVE METRICS
+======================================================================
+
+Test sequences: 1,000
+Evaluating model performance...
+
+📊 Test Set Performance:
+  ├─ Accuracy: 49.90%
+  ├─ Top-5 Accuracy: 80.40%
+  ├─ Loss: 1.7392
+  └─ Evaluation Time: 6.49s
+
+📈 Perplexity: 5.69
+   (Lower is better. Good models: 10-50, Excellent: <10)
+
+======================================================================
+2. INFERENCE SPEED BENCHMARKING
+======================================================================
+
+⚡ Single Character Prediction:
+  ├─ Mean: 193.74ms
+  ├─ Std: 46.69ms
+  └─ Throughput: 5.2 predictions/sec
+
+📦 Batch Size 32:
+  ├─ Mean Time: 413.79ms
+  └─ Throughput: 77.3 predictions/sec
+
+📦 Batch Size 64:
+  ├─ Mean Time: 634.86ms
+  └─ Throughput: 100.8 predictions/sec
+
+📦 Batch Size 128:
+  ├─ Mean Time: 1182.16ms
+  └─ Throughput: 108.3 predictions/sec
+
+📦 Batch Size 256:
+  ├─ Mean Time: 2276.10ms
+  └─ Throughput: 112.5 predictions/sec
+
+======================================================================
+3. TEXT GENERATION QUALITY
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Temperature: 0.5
+──────────────────────────────────────────────────────────────────────
+
+🎭 Prompt: 'To be or not to be'
+Generated:
+To be or not to be done,
+Mine tender of your word that would be may be house.
+But they be like comes to the part and nature
+The regution and me for the day of fire
+That
+
+
+🎭 Prompt: 'O Romeo, Romeo'
+Generated:
+O Romeo, Romeo, and Shame,
+Scamboce is on the Jock and Part and a Generit,
+Madam and Thandom for the Part and a present,
+They married the curm of their eyes with me
+
+
+🎭 Prompt: 'Friends, Romans, countrymen'
+Generated:
+Friends, Romans, countrymen crown.
+
+POLONIO.
+How such the comminging flander—Hath times to white never said
+in that so more by you and so crack the hand, and read the sack.
+
+Ent
+
+
+🎭 Prompt: 'All the world's a stage'
+Generated:
+All the world's a stage
+Not to my bounds and confins him hay house them,
+And that it I am the sorrow of this,
+And bear the tenty with the man you are all this states.
+
+CORIO
+
+
+──────────────────────────────────────────────────────────────────────
+Temperature: 0.8
+──────────────────────────────────────────────────────────────────────
+
+🎭 Prompt: 'To be or not to be'
+Generated:
+To be or not to be breed, sir,
+To sut the pentation, and of praceril,
+He will be doom his a Parciat, come!
+
+MISTRESS HOST.
+I came to more are nothing knight of the mess
+
+
+🎭 Prompt: 'O Romeo, Romeo'
+Generated:
+O Romeo, Romeon of Warwick’s Mimony.
+
+TREONIO.
+I have the grace the charer but not sentent some,
+And chirds in the several world, a nost they
+As your blood better d
+
+
+🎭 Prompt: 'Friends, Romans, countrymen'
+Generated:
+Friends, Romans, countrymen care,
+For the Phaste cancour and Floutiving I can make the common and frown,
+Or before him. Here to the amprolition care.
+Keep so aways then great tr
+
+
+🎭 Prompt: 'All the world's a stage'
+Generated:
+All the world's a stage
+Never a day and from all not comes of part.
+
+GOMATIO.
+If you fall of the buttle hand to be sometime
+If somethings of thee and thy ash’s good beared,
+
+
+
+──────────────────────────────────────────────────────────────────────
+Temperature: 1.0
+──────────────────────────────────────────────────────────────────────
+
+🎭 Prompt: 'To be or not to be'
+Generated:
+To be or not to beat you.
+That some dead here to thou rove “or together
+Yet not rutis by arm, next, like oyaest than steed.
+Do with let friends but stimes against a loo
+
+
+🎭 Prompt: 'O Romeo, Romeo'
+Generated:
+O Romeo, Romeos.
+
+KING.
+I must would tell them, when not prayers, is make Thar
+the Duke. Go well, in his rowr, sir.
+
+CELINA.
+Brother Tuck such some into taor heart 
+
+
+🎭 Prompt: 'Friends, Romans, countrymen'
+Generated:
+Friends, Romans, countrymen very.
+Scomentor and that: if followed that thy crie you thy drows;
+Forbast doth all of encrews comes.
+What your but gapes, in madam! O no accour such
+
+
+🎭 Prompt: 'All the world's a stage'
+Generated:
+All the world's a stage; I
+with, thou honour comes, blow and more bolies doth: the forth lambate mets.
+Rome here struck even never robrate. I took
+with, fair thy creathing m
+
+
+──────────────────────────────────────────────────────────────────────
+Temperature: 1.2
+──────────────────────────────────────────────────────────────────────
+
+🎭 Prompt: 'To be or not to be'
+Generated:
+To be or not to be’s:
+  Trompish jealiboliet!
+Go percious from this scleciver but near pains
+It do gime his naughtes, exevuldoms?__—Peur best,
+Spubch us. If my rests ve
+
+
+🎭 Prompt: 'O Romeo, Romeo'
+Generated:
+O Romeo, RomeoTs are a name!
+
+KING.
+If it ade horse send’s you weatam; Caace of him? He, and I will.
+
+CHESSIA.
+Is it my hunce,
+Fraimant moved you by my head hither 
+
+
+🎭 Prompt: 'Friends, Romans, countrymen'
+Generated:
+Friends, Romans, countrymens, too morter!
+I rids nor sweet pordon I do thou up,
+Lyswacqua Lord Goth’s in leling ’t
+But a friend and heir nonough our mons and out:
+Did rejuck it!
+
+
+🎭 Prompt: 'All the world's a stage'
+Generated:
+All the world's a stager culd for their life,
+eurlumpiness, lime the Speak Gracious Wifely. Freecheaw, or Tenthamuri. Trurseermy silly retippion!
+
+YORK.
+But not ourselvy lam
+
+
+======================================================================
+4. QUALITATIVE ANALYSIS
+======================================================================
+
+📝 Extended Sample (500 characters, temp=0.8):
+──────────────────────────────────────────────────────────────────────
+To be or not to be end
+the sea, at our live.
+
+IAGO.
+Why. Your caurn’d, I must faith in young Barina and you
+It with a good promimed than from our cright, with gale
+That sons must my blood, the company by heaving
+With down was not gown the known in the life,
+Enton in arm the harm of Jord disderious’d,
+I am no Frances have not kiss for my march of
+You face rough and infrofing things a stibles!
+
+[_The winders aiNe Ilone and Frain._]
+
+Enter Foot, From Such do I hear of the smirhes, as the brother;
+And mount remember 
+──────────────────────────────────────────────────────────────────────
+
+📊 Generated Text Analysis:
+  ├─ Total Words: 106
+  ├─ Unique Words: 78
+  ├─ Vocabulary Diversity: 73.58%
+  ├─ Average Word Length: 3.7 characters
+  └─ Sentence-like Structures: 5
+
+📚 Shakespeare Original (for comparison):
+  ├─ Total Words: 96
+  ├─ Unique Words: 75
+  ├─ Vocabulary Diversity: 78.12%
+  ├─ Average Word Length: 4.2 characters
+  └─ Sentence-like Structures: 4
+
+======================================================================
+5. MODEL ARCHITECTURE SUMMARY
+======================================================================
+
+🏗️ Model Architecture:
+Model: "CharLevel_BiLSTM"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+┃ Layer (type)                    ┃ Output Shape           ┃       Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+│ embedding (Embedding)           │ (None, 100, 128)       │        12,800 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ bidirectional (Bidirectional)   │ (None, 100, 512)       │       788,480 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ bidirectional_1 (Bidirectional) │ (None, 256)            │       656,384 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout (Dropout)               │ (None, 256)            │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense (Dense)                   │ (None, 256)            │        65,792 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout_1 (Dropout)             │ (None, 256)            │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_1 (Dense)                 │ (None, 100)            │        25,700 │
+└─────────────────────────────────┴────────────────────────┴───────────────┘
+ Total params: 1,549,158 (5.91 MB)
+ Trainable params: 1,549,156 (5.91 MB)
+ Non-trainable params: 0 (0.00 B)
+ Optimizer params: 2 (12.00 B)
+
+📦 Model Statistics:
+  ├─ Total Parameters: 1,549,156
+  ├─ Model Size (FP32): 5.91 MB
+  ├─ Vocabulary Size: 100
+  └─ Sequence Length: 100
+
+======================================================================
+6. FINAL SUMMARY
+======================================================================
+
+✅ MODEL EVALUATION COMPLETE
+
+Key Metrics:
+  • Test Accuracy: 49.90%
+  • Top-5 Accuracy: 80.40%
+  • Perplexity: 5.69
+  • Inference Speed: 5.2 predictions/sec
+  • Model Size: 5.91 MB
+
+Quality Assessment:
+  • Vocabulary Diversity: 73.6% (Original: 78.1%)
+  • Average Word Length: 3.7 chars (Original: 4.2)
+
+Performance Level:
+
+  ❌ NEEDS IMPROVEMENT - More training required
+
+======================================================================
+Report saved to: evaluation_report.txt
+======================================================================

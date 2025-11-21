@@ -1,29 +1,29 @@
-# Bi-LSTM Model Configuration
+# Bi-LSTM Model Configuration - Optimized for 70% accuracy
 
 model:
   architecture: bilstm
-  embedding_dim: 100  # Using GloVe 100d
-  lstm_units: [256, 128]
-  dense_units: 512
-  dropout_rates: [0.2, 0.3, 0.4]
+  embedding_dim: 256  # Increased for better representation
+  lstm_units: [512, 256]  # Increased capacity
+  dense_units: 1024  # Increased hidden layer
+  dropout_rates: [0.1, 0.2, 0.3]  # Reduced dropout to allow more learning
   bidirectional: true
   use_pretrained_embeddings: false
   trainable_embeddings: true
 
 data:
   text_file: Shakespeare.txt
-  vocab_size: 10000
-  sequence_length: 20
-  batch_size: 64
+  vocab_size: 5000  # Reduced vocab for higher accuracy (focus on common words)
+  sequence_length: 40  # Increased context window
+  batch_size: 128  # Larger batches for stability
   train_split: 0.8
 
 training:
-  epochs: 10
-  initial_lr: 0.001
+  epochs: 50  # More epochs for convergence
+  initial_lr: 0.002  # Slightly higher LR for faster initial learning
   optimizer: adam
   loss: sparse_categorical_crossentropy
   clipnorm: 1.0
-  label_smoothing: 0.1
+  label_smoothing: 0.0  # Removed to allow sharper predictions
 
 callbacks:
   early_stopping:

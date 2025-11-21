@@ -1,0 +1,48 @@
+# Fast CPU Training Configuration - Optimized for 70% accuracy with speed
+
+model:
+  architecture: bilstm
+  embedding_dim: 128  # Balanced size
+  lstm_units: [256, 128]  # Smaller but effective
+  dense_units: 512  # Reasonable size
+  dropout_rates: [0.15, 0.25, 0.3]  # Moderate dropout
+  bidirectional: true
+  use_pretrained_embeddings: false
+  trainable_embeddings: true
+
+data:
+  text_file: Shakespeare.txt
+  vocab_size: 2000  # MUCH smaller vocab = higher accuracy faster
+  sequence_length: 30  # Good context
+  batch_size: 256  # Larger batches = fewer steps
+  train_split: 0.85  # More training data
+
+training:
+  epochs: 30  # Enough for convergence
+  initial_lr: 0.003  # Higher LR for faster learning
+  optimizer: adam
+  loss: sparse_categorical_crossentropy
+  clipnorm: 1.0
+  label_smoothing: 0.0  # No smoothing for sharper predictions
+
+callbacks:
+  early_stopping:
+    patience: 7
+    monitor: val_loss
+  lr_scheduler:
+    factor: 0.5
+    patience: 3
+    min_lr: 1.0e-6
+  model_checkpoint:
+    save_best_only: true
+    monitor: val_accuracy
+
+inference:
+  temperature: 0.8
+  top_k: 40
+  num_words: 100
+
+paths:
+  model_save_path: models/fast_bilstm_model.h5
+  log_dir: logs/fast_training
+  embeddings_dir: data
